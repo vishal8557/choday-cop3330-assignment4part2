@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ourtodolist {
+    - main()
+    - start()
+}
+class ToDoListController {
+    - Text Display:TextField
+
+    + displayAllItemsButtonClicked()
+        + displayIncompletionsButtonClicked()
+        + displayCompletionsButtonClicked()
+        + saveItemsButtonClicked()
+        + saveAllItemsButtonClicked()
+        + loadSingleToDoListButtonClicked()
+        + loadMultToDoListButtonClicked()
+    + addToDoListButtonClicked()
+    + removeToDoListButtonClicked()
+    + editToDoListTitleButtonClicked()
+    + addItemButtonClicked()
+    + removeItemButtonClicked()
+    + editItemDescriptionButtonClicked()
+    + editItemDueDateButtonClicked()
+    + markItemCompleteButtonClicked()
+
+    ----
+
+    +letusaddthistodolistnow()
+    + listremoval()
+    + editingtodolist()
+    + letsaddanitemnow()
+    + letsremoveanitemnow()
+    + editnameoftheitem()
+    + itemsduedateedit()
+    + putitemascomplete()
+    + shocaseitemsnow()
+    + showitemsthatarenotcomplete()
+    + showitemsthatareready()
+    + savewhatwechangedintodolistall()
+    + savetheseitemsnow()
+    + letsloadonetodolist()
+    + loadmultipletodolistsnow()
+}
+
+javafx.Application <- ourtodolist
+
+ourtodolist - ToDoListController
+
+@enduml
