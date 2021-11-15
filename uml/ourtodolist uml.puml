@@ -1,0 +1,78 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ourtodolist
+{
+* start
+* main
+*fxml loader
+}
+class ToDoListController
+{
+ + displayCompletions()
+    + lets_load_this_list()
+    + clearlistnow()
+    + addItem()
+    + letstakeoutthisitem()
+    + desceditednow()
+    + editDueDate()
+    + eedto_markthattheitemiscompleted()
+    + showoffalitemsnow()
+    +  show_the_items_that_are_not_complete()
+    + TextField textOutput()
+    + TextField Our_Description_here
+    + TextField textDate
+    + TextField lets_complete_our_text
+    - list: List<ToDoItem>
+    - savedList: List<ToDoItem>
+    - textOutput: TextField
+    - Our_Description_here: TextField
+    - textDate: TextField
+    - lets_complete_our_text: TextField
+    - listDisplay: ListView<String>
+
+    + displayCompletionsButtonClicked()
+    + saveItemsButtonClicked()
+    + loadListButtonClicked()
+    + clearListButtonClicked()
+    + addItemButtonClicked()
+    + removeItemButtonClicked()
+    + editDescriptionButtonClicked()
+    + editDueDateButtonClicked()
+    + markItemCompleteButtonClicked()
+    + displayAllItemsButtonClicked()
+    + displayIncompleteButtonClicked()
+
+}
+
+class STUFFTODOLIST
+{
+* whatscomplete = boolean
+    * description_of_the_item
+    * THE_DATE_HERE
+}
+
+
+class ToDoListControllerTest
+{
+    + lets_load_this_listTest()
+        + clearlistnowTest()
+        + addItemTest()
+        + letstakeoutthisitemTest()
+        + desceditednowTest()
+        + editDueDateTest()
+        + needto_markthattheitemiscompletedTest()
+        + showoffalitemsnowTest()
+        +  show_the_items_that_are_not_completeTest()
+}
+
+
+scenebuilder-javafx.application
+javafx.application <- ToDoListController
+
+ToDoListController - ToDoListControllerTest
+
+
+ToDoListControllerTest<-STUFFTODOLIST
+STUFFTODOLIST<-ourtodolist
+@enduml
